@@ -5,6 +5,7 @@ pipeline {
 			steps{
 				sh (script: '''
                           	#!/bin/bash
+							cd /var/lib/jenkins/workspace/GI
                             docker-compose down
 						''')
 			 	}
