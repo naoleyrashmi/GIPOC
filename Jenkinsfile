@@ -1,6 +1,12 @@
 pipeline {
     agent any
     	stages {
+		stage('Git checkout') {
+            steps {
+                step([$class: 'WsCleanup'])
+                checkout scm
+            }
+        }
 		stage ('Building and running the container') {
 			steps{
 				sh (script: '''
