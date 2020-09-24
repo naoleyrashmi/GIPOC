@@ -16,3 +16,6 @@ services:
     environment:
       - POSTGRES_PASSWORD=mypasswd
 
+networks:
+  compose-net:
+    driver: bridge
