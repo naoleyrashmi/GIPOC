@@ -1,0 +1,13 @@
+pipeline {
+    agent any
+    	stages {
+		stage ('Destroy App') {
+			steps{
+				sh (script: '''
+                          	#!/bin/bash
+                            docker-compose down
+						''')
+			 	}
+			}  
+		}
+	}

@@ -1,0 +1,18 @@
+version: '3'
+# NOTE: move this answer file up a directory so it'll work
+
+services:
+
+  puppetclient:
+    image: puppetclient
+    build: .
+    extra_hosts:
+      - "mohseen02.novalocal:10.20.14.212"
+    ports:
+      - "9999:8080"
+
+  postgres:
+    image: postgres:12.1
+    environment:
+      - POSTGRES_PASSWORD=mypasswd
+
