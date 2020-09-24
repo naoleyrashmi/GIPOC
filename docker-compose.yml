@@ -16,6 +16,6 @@ services:
     environment:
       - POSTGRES_PASSWORD=mypasswd
 
-networks:
-  gi_default:
-    driver: bridge
+# networks:
+#   gi_default:
+#     driver: bridge
