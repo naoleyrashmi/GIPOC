@@ -17,5 +17,5 @@ services:
       - POSTGRES_PASSWORD=mypasswd
 
 networks:
-  compose-net:
+  gi_default:
     driver: bridge
