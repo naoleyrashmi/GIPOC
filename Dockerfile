@@ -4,7 +4,7 @@ RUN rpm -Uvh https://yum.puppet.com/puppet6-release-el-7.noarch.rpm && \
     yum install -y puppet-agent && \
     yum install epel-release -y  && \
     yum install python-pip -y && \
-    yum install -y psql  && \
+    yum install postgresql  -y && \
     yum clean all
 
 RUN pip install --upgrade pip 
