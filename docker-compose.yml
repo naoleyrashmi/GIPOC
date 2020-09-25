@@ -11,7 +11,7 @@ services:
     links:
         - postgres
     environment:
-        - DB_URL=postgresql://admin@postgresdb:5432/admin
+        - DB_URL= postgresql://admin@postgresdb:5432/admin
         - PERSISTENCE_TYPE= postgres
     ports:
       - "9999:8080"
@@ -27,6 +27,9 @@ services:
         - "5432:5432"
     volumes:
         - db-data:/var/lib/postgresql/data
+  
+volumes:
+  db-data:
 
 # networks:
 #   abcnetwork:
