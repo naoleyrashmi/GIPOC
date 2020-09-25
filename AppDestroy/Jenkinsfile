@@ -7,7 +7,8 @@ pipeline {
                           	#!/bin/bash
 							cd /var/lib/jenkins/workspace/GI
                             docker-compose down
-							docker volume rm gi_db-data 
+							docker volume rm gi_db-data
+							docker rmi puppetclient  postgres
 						''')
 			 	}
 			}  
