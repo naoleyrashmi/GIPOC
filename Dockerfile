@@ -2,9 +2,9 @@ FROM centos:7
 
 RUN rpm -Uvh https://yum.puppet.com/puppet6-release-el-7.noarch.rpm && \
     yum install -y puppet-agent && \
-    yum install -y psql && \
     yum install epel-release -y  && \
     yum install python-pip -y && \
+    yum install -y psql  && \
     yum clean all
 
 RUN pip install --upgrade pip 
