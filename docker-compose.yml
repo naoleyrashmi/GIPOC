@@ -8,14 +8,26 @@ services:
     build: .
     extra_hosts:
       - "mohseen02.novalocal:10.20.14.212"
+    links:
+        - postgres
+    environment:
+        - DB_URL=postgresql://admin@postgresdb:5432/admin
+        - PERSISTENCE_TYPE= postgres
     ports:
       - "9999:8080"
 
   postgres:
     image: postgres:12.1
+    container_name: postgresdb
     environment:
+      - POSTGRES_USER=admin
       - POSTGRES_PASSWORD=mypasswd
+      - POSTGRES_DB=gidb
+    ports:
+        - "5432:5432"
+    volumes:
+        - db-data:/var/lib/postgresql/data
 
 # networks:
-#   gi_default:
+#   abcnetwork:
 #     driver: bridge
