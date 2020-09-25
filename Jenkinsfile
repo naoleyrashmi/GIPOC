@@ -6,7 +6,7 @@ pipeline {
 				sh (script: '''
                           	#!/bin/bash
 							# Run the  Stack
-								docker-compose up
+								docker-compose up -d
 						''')
 			 	}
 			}  
