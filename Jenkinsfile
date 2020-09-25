@@ -5,19 +5,15 @@ pipeline {
 			steps{
 				sh (script: '''
                           	#!/bin/bash
-							COMPOSE_ID=${JOB_NAME-local}
-							# Remove Previous Stack
-								docker-compose -p $COMPOSE_ID rm -f
-							# Starting new stack environment
-								docker-compose -p $COMPOSE_ID up -d --build
+							# Run the  Stack
+								docker-compose up
 						''')
 			 	}
 			}  
-		stage ('Removing container images') {
+		stage ('Removing unused container images') {
 			steps{
 				sh (script: '''
                           	#!/bin/bash
-							
                             docker system prune --all
 						''')
 			 	}
