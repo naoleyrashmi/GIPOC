@@ -1,5 +1,4 @@
 version: '3.4'
-# NOTE: move this answer file up a directory so it'll work
 
 services:
 
@@ -30,7 +29,3 @@ services:
   
 volumes:
   db-data:
-
-# networks:
-#   abcnetwork:
-#     driver: bridge
