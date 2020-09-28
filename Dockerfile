@@ -9,6 +9,7 @@ RUN rpm -Uvh https://yum.puppet.com/puppet6-release-el-7.noarch.rpm && \
 
 RUN pip install --upgrade pip 
 RUN pip install awscli --upgrade --ignore-installed six 
+RUN mkdir -p /root/.aws
 
 EXPOSE 9999 8080
 COPY test.sh  /tmp
