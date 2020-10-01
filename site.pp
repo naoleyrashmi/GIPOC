@@ -10,3 +10,6 @@ class { 'java' :
   war_source => 'https://github.com/AKSarav/SampleWebApp/raw/master/dist/SampleWebApp.war',
   require => Tomcat::Instance['default'],
  }
+node "puppetclient" {
+        include mymodule
+}
