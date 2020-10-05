@@ -22,7 +22,6 @@
         - aws s3 cp  s3://gi-artifacts/text.txt .
 
 7. Below tasks have been achieved as part of this POC 
-
         - Puppet Master and Client connectivity 
         - Containarise 2 tier application with Tomcat as frontend and Postgres as backend.
         - Tomcat installation and configuration fetched from Puppet Master.
@@ -30,6 +29,7 @@
         - DB connectvity established within container.
         - S3 connectvity established within container.
         - Jenkins Pipeline set for setting up the environment and destroying the same.
+        - Running the container on remote machine.
 
 
 
