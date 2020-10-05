@@ -13,13 +13,5 @@ pipeline {
 						''')
 			 	}
 			}  
-		stage ('Removing unused container images') {
-			steps{
-				sh (script: '''
-                          	#!/bin/bash
-                            docker system prune --all
-						''')
-			 	}
-			} 
 		}
 	}
