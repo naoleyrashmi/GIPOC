@@ -15,7 +15,7 @@ pipeline {
 				            export PortNumber=$PortNumber
 							export User=$User
 							# Run the  Stack
-						    docker-compose up -d 
+						    docker-compose up -d -p $User
 						''')
 			 	}
 			}  
