@@ -13,7 +13,7 @@ pipeline {
 							echo $DOCKER_HOST
 				            export PortNumber=$PortNumber
 							# Run the  Stack
-						    docker-compose up -d 
+						    docker-compose up  --scale puppetclient=3 -d
 						''')
 			 	}
 			}  
