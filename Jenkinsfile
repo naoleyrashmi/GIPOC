@@ -12,7 +12,7 @@ pipeline {
 							export DOCKER_HOST=tcp://root@10.20.14.238:5555
 							echo $DOCKER_HOST
 							# Run the  Stack
-						    docker-compose up -d
+						    docker-compose up -d -e PORT=$PortNumber
 						''')
 			 	}
 			}  

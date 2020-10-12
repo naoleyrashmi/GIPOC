@@ -13,7 +13,7 @@ services:
         - DB_URL= postgresql://admin@postgresdb:5432/admin
         - PERSISTENCE_TYPE= postgres
     ports:
-      - "${PORT}:8080"
+      - "${PortNumber}:8080"
 
   postgres:
     image: postgres:12.1
