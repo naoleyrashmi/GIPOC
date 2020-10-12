@@ -11,7 +11,7 @@ RUN pip install --upgrade pip
 RUN pip install awscli --upgrade --ignore-installed six 
 RUN mkdir -p /root/.aws
 
-EXPOSE 9999 8080
+#EXPOSE 9999 8080
 COPY test.sh  /tmp
 RUN chmod +x /tmp/test.sh
 COPY puppet.conf /etc/puppetlabs/puppet/puppet.conf

@@ -1,5 +1,8 @@
 pipeline {
     agent any
+	parameters {
+        string(name: 'PortNumber', description: 'Please Enter the Port Number for your application.')
+        choice(name: 'Number', description: 'Please select the Port Number', choices: '9997\9998')
     	stages {
 		stage ('Building and running the container') {
 			steps{
