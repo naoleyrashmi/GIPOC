@@ -4,6 +4,7 @@ services:
 
   puppetclient:
     image: puppetclient
+    container_name: puppetclient-${PortNumber}
     build: .
     extra_hosts:
       - "mohseen02.novalocal:10.20.14.212"
@@ -14,6 +15,7 @@ services:
         - PERSISTENCE_TYPE= postgres
     ports:
       - "${PortNumber}:8080"
+  
 
   postgres:
     image: postgres:12.1
