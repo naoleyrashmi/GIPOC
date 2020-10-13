@@ -19,7 +19,7 @@ services:
 
   postgres:
     image: postgres:12.1
-    container_name: postgresdb-${BUILD_NUMBER}
+    container_name: postgresdb-${DBPortNumber}
     environment:
       - POSTGRES_USER=admin
       - POSTGRES_PASSWORD=mypasswd
