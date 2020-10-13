@@ -2,6 +2,7 @@ pipeline {
     agent any
 	parameters {
         string(name: 'PortNumber', description: 'Please Enter the Port Number for your application.')
+		string(name: 'User', description: 'Please Enter the User for your application.')
 	}
     	stages {
 		stage ('Building and running the container') {
@@ -13,7 +14,7 @@ pipeline {
 							echo $DOCKER_HOST
 				            export PortNumber=$PortNumber
 							# Run the  Stack
-						    docker-compose up  --scale puppetclient=3 -d
+						    docker-compose --project-name $BUILD_NUMBER up -d
 						''')
 			 	}
 			}  
