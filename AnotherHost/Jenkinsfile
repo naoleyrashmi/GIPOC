@@ -1,0 +1,24 @@
+pipeline {
+    agent any
+	parameters {
+        string(name: 'PortNumber', description: 'Please Enter the Port Number for your application.')
+		string(name: 'User', description: 'Please Enter the User for your application.')
+	}
+    	stages {
+		stage ('Building and running the container') {
+			steps{
+				sh (script: '''
+                          	#!/bin/bash
+				            # SEtting Docker remote host
+							export DOCKER_HOST=tcp://root@10.20.14.238:5555
+							echo $DOCKER_HOST
+				            export PortNumber=$PortNumber
+							# Build the image 
+						    docker build -t puppetclient-${BUILD_NUMBER} .
+							docker network create ${User}
+							docker run -d -it --name ${User}-${BUILD_NUMBER} -p ${PortNumber}:8080 --add-host mohseen02.novalocal:10.20.14.212 --network=${User} puppetclient-${BUILD_NUMBER}
+						''')
+			 	}
+			}  
+		}
+	}
