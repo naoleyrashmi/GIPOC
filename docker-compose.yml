@@ -4,7 +4,7 @@ services:
 
   puppetclient:
     image: puppetclient-${BUILD_NUMBER}
-    container_name: puppetclient-${PortNumber}
+    container_name: puppetclient
     build: .
     extra_hosts:
       - "mohseen02.novalocal:10.20.14.212"
