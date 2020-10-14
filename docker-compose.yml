@@ -15,8 +15,8 @@ services:
         - PERSISTENCE_TYPE= postgres
     ports:
       - "${PortNumber}:8080"
-    networks:
-      -  gi_${PortNumber}
+    # networks:
+    #   -  gi_${PortNumber}
   
 
   postgres:
@@ -30,11 +30,11 @@ services:
         - "${DBPortNumber}:5432"
     volumes:
         - db-data:/var/lib/postgresql/data
-    networks:
-      -  gi_${PortNumber}
+    # networks:
+    #   -  gi_${PortNumber}
   
 volumes:
   db-data:
 
-networks:
-  gi_${PortNumber}:
+# networks:
+#   gi_${PortNumber}:
