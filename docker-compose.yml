@@ -33,4 +33,4 @@ volumes:
   db-data:
 
 networks:
-  gi_${PortNumber}
+  gi_${PortNumber}:
