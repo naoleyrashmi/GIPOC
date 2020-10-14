@@ -15,7 +15,7 @@ pipeline {
 							echo $DOCKER_HOST
 				            export PortNumber=$PortNumber
 							# Run the  Stack
-						    docker-compose --project-name $User-$BUILD_NUMBER up -d
+						    docker-compose --project-name $BUILD_NUMBER up -d
 						''')
 			 	}
 			}  
