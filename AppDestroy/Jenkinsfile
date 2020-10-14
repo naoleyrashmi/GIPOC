@@ -1,5 +1,9 @@
 pipeline {
     agent any
+	parameters {
+        string(name: 'PortNumber', description: 'Please Enter the Port Number for your application.')
+		string(name: 'DBPortNumber', description: 'Please Enter the Port Number for your DB.')
+	}
     	stages {
 		stage ('Destroy App') {
 			steps{
@@ -9,8 +13,6 @@ pipeline {
 							export DOCKER_HOST=tcp://root@10.20.14.238:5555
 							echo $DOCKER_HOST
                             docker-compose down
-							docker volume rm gi_db-data
-							docker rmi puppetclient  postgres:12.1
 						''')
 			 	}
 			}  

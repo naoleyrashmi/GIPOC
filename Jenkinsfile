@@ -2,7 +2,6 @@ pipeline {
     agent any
 	parameters {
         string(name: 'PortNumber', description: 'Please Enter the Port Number for your application.')
-		string(name: 'User', description: 'Please Enter the User for your application.')
 		string(name: 'DBPortNumber', description: 'Please Enter the Port Number for your DB.')
 	}
     	stages {

@@ -3,7 +3,7 @@ version: '3.4'
 services:
 
   puppetclient:
-    image: puppetclient-${BUILD_NUMBER}
+    image: puppetclient-${PortNumber}
     container_name: puppetclient-${PortNumber}
     build: .
     extra_hosts:
