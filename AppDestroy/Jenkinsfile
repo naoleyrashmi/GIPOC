@@ -19,12 +19,13 @@ pipeline {
 						''')
 			 	}
 			} 
-		stage ('Removing Container Image ') {
+		stage ('Removing Container Image & Volumes') {
 			steps{
 				sh (script: '''
                           	#!/bin/bash
 							export DOCKER_HOST=$DockerHost
 							docker rmi puppetclient-$AppPortNumber
+							docker volume rm $AppPortNumber_db-data
 						''')
 				}
 		    }
