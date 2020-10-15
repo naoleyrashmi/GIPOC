@@ -24,6 +24,7 @@ pipeline {
 				sh (script: '''
                           	#!/bin/bash
 							export DOCKER_HOST=$DockerHost
+							export AppPortNumber=$AppPortNumber
 							docker rmi puppetclient-$AppPortNumber
 							docker volume rm $AppPortNumber_db-data
 						''')
