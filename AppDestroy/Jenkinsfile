@@ -3,6 +3,7 @@ pipeline {
 	parameters {
         string(name: 'AppPortNumber', description: 'Please Enter the Port Number for your application.')
 		string(name: 'DBPortNumber', description: 'Please Enter the Port Number for your DB.')
+		string(name: 'DockerHost', description: 'Please Enter the DockerHost for your application.',defaultValue:'tcp://root@10.20.14.238:5555')
 	}
     	stages {
 		stage ('Destroy App') {
@@ -10,7 +11,7 @@ pipeline {
 				sh (script: '''
                           	#!/bin/bash
 							cd /var/lib/jenkins/workspace/GI
-							export DOCKER_HOST=tcp://root@10.20.14.238:5555
+							export DOCKER_HOST=$DockerHost
 							echo $DOCKER_HOST
 							export AppPortNumber=$AppPortNumber
 							export DBPortNumber=$DBPortNumber
@@ -22,6 +23,7 @@ pipeline {
 			steps{
 				sh (script: '''
                           	#!/bin/bash
+							export DOCKER_HOST=$DockerHost
 							docker rmi puppetclient-$AppPortNumber
 						''')
 				}
