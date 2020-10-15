@@ -3,8 +3,8 @@ version: '3.4'
 services:
 
   puppetclient:
-    image: puppetclient-${PortNumber}
-    container_name: puppetclient-${PortNumber}
+    image: puppetclient-${AppPortNumber}
+    container_name: puppetclient-${AppPortNumber}
     build: .
     extra_hosts:
       - "mohseen02.novalocal:10.20.14.212"
@@ -14,9 +14,8 @@ services:
         - DB_URL= postgresql://admin@postgresdb:5432/admin
         - PERSISTENCE_TYPE= postgres
     ports:
-      - "${PortNumber}:8080"
-    # networks:
-    #   -  gi_${PortNumber}
+      - "${AppPortNumber}:8080"
+ 
   
 
   postgres:
@@ -30,11 +29,8 @@ services:
         - "${DBPortNumber}:5432"
     volumes:
         - db-data:/var/lib/postgresql/data
-    # networks:
-    #   -  gi_${PortNumber}
+
   
 volumes:
   db-data:
 
-# networks:
-#   gi_${PortNumber}:

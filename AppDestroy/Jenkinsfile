@@ -1,8 +1,7 @@
 pipeline {
     agent any
 	parameters {
-        string(name: 'PortNumber', description: 'Please Enter the Port Number for your application.')
-		string(name: 'DBPortNumber', description: 'Please Enter the Port Number for your DB.')
+        string(name: 'AppPortNumber', description: 'Please Enter the Port Number for your application.')
 	}
     	stages {
 		stage ('Destroy App') {
@@ -12,9 +11,8 @@ pipeline {
 							cd /var/lib/jenkins/workspace/GI
 							export DOCKER_HOST=tcp://root@10.20.14.238:5555
 							echo $DOCKER_HOST
-							docker network rm $PortNumber_default
-							docker volume rm $PortNumber_default
-                            docker-compose down 
+							export AppPortNumber=$AppPortNumber
+                            docker-compose -p $AppPortNumber down 
 						''')
 			 	}
 			}  
