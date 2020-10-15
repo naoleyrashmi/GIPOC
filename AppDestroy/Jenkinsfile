@@ -26,7 +26,7 @@ pipeline {
 							export DOCKER_HOST=$DockerHost
 							export AppPortNumber=$AppPortNumber
 							docker rmi puppetclient-$AppPortNumber
-							docker volume rm $AppPortNumber_db-data
+							docker volume rm ${AppPortNumber}_db-data
 						''')
 				}
 		    }
