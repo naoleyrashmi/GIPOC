@@ -2,6 +2,7 @@ pipeline {
     agent any
 	parameters {
         string(name: 'AppPortNumber', description: 'Please Enter the Port Number for your application.')
+		string(name: 'DBPortNumber', description: 'Please Enter the Port Number for your DB.')
 	}
     	stages {
 		stage ('Destroy App') {
@@ -12,6 +13,7 @@ pipeline {
 							export DOCKER_HOST=tcp://root@10.20.14.238:5555
 							echo $DOCKER_HOST
 							export AppPortNumber=$AppPortNumber
+							export DBPortNumber=$DBPortNumber
                             docker-compose -p $AppPortNumber down 
 						''')
 			 	}
