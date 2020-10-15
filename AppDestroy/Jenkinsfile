@@ -17,6 +17,14 @@ pipeline {
                             docker-compose -p $AppPortNumber down 
 						''')
 			 	}
-			}  
+			} 
+		stage ('Removing Container Image ') {
+			steps{
+				sh (script: '''
+                          	#!/bin/bash
+							docker rmi puppetclient-$AppPortNumber
+						''')
+				}
+		    }
 		}
 	}
