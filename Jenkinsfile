@@ -2,7 +2,10 @@ pipeline {
     agent any
 	parameters {
         string(name: 'PortNumber', description: 'Please Enter the Port Number for your application.')
+		string(name: 'User', description: 'Please Enter the Port Number for your application.')
 		string(name: 'DBPortNumber', description: 'Please Enter the Port Number for your DB.')
+		string(name: 'DockerHost', description: 'Please Enter the DockerHost for your application.',defaultValue:'tcp://root@10.20.14.238:5555')
+
 	}
     	stages {
 		stage ('Building and running the container') {
@@ -10,7 +13,7 @@ pipeline {
 				sh (script: '''
                           	#!/bin/bash
 				            # SEtting Docker remote host
-							export DOCKER_HOST=tcp://root@10.20.14.238:5555
+							export DOCKER_HOST=$DockerHost
 							echo $DOCKER_HOST
 				            export PortNumber=$PortNumber
 							# Run the  Stack
