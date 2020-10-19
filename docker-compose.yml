@@ -6,7 +6,7 @@ services:
     image: puppetclient-${AppPortNumber}
     container_name: puppetclient-${AppPortNumber}
     build: .
-    hostname: ${Hostname}
+    hostname: ${Apphostname}
     extra_hosts:
       - "mohseen02.novalocal:10.20.14.212"
     links:
