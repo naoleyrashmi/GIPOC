@@ -15,4 +15,4 @@ RUN mkdir -p /root/.aws
 COPY test.sh  /tmp
 RUN chmod +x /tmp/test.sh
 COPY puppet.conf /etc/puppetlabs/puppet/puppet.conf
-CMD ["/tmp/test.sh", "run"]
+CMD ["/tmp/startup.sh", "run"]
