@@ -13,6 +13,6 @@ RUN mkdir -p /root/.aws
 
 #EXPOSE 9999 8080
 COPY test.sh  /tmp
-RUN chmod +x /tmp/test.sh
+RUN chmod +x /tmp/startup.sh
 COPY puppet.conf /etc/puppetlabs/puppet/puppet.conf
 CMD ["/tmp/startup.sh", "run"]
