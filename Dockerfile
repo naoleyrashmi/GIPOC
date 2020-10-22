@@ -1,4 +1,4 @@
-FROM centos:7
+FROM centos
 
 RUN yum update -y && \
     rpm -Uvh https://yum.puppet.com/puppet6-release-el-7.noarch.rpm && \
