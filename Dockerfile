@@ -1,9 +1,9 @@
 FROM centos:7
 
-RUN rpm -Uvh https://yum.puppet.com/puppet6-release-el-7.noarch.rpm && \
+RUN yum update -y && \
+    rpm -Uvh https://yum.puppet.com/puppet6-release-el-7.noarch.rpm && \
     yum install -y puppet-agent && \
     yum install epel-release -y  && \
-    yum update -y && \
     yum repolist && \
     yum install python-pip -y && \
     yum install postgresql  -y && \
