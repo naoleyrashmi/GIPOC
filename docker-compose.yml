@@ -2,9 +2,9 @@ version: '3.4'
 
 services:
 
-  puppetclient:
-    image: puppetclient-${AppPortNumber}
-    container_name: puppetclient-${AppPortNumber}
+  tomcat:
+    image: tomcat-${AppPortNumber}
+    container_name: tomcat-${AppPortNumber}
     build: .
     hostname: ${AppHostname}
     extra_hosts:
