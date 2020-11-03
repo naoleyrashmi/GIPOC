@@ -25,7 +25,7 @@ pipeline {
                           	#!/bin/bash
 							export DOCKER_HOST=$DockerHost
 							export AppPortNumber=$AppPortNumber
-							docker rmi puppetclient-$AppPortNumber
+							docker rmi tomcat-$AppPortNumber
 							docker volume rm ${AppPortNumber}_db-data
 						''')
 				}
