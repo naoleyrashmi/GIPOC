@@ -30,6 +30,7 @@
         - S3 connectvity established within container.
         - Jenkins Pipeline set for setting up the environment and destroying the same.
         - Running the container on remote machine.
+        - Using same JenkinsJOb to create unique containers
 
 
 
